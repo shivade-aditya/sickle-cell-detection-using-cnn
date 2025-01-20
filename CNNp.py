@@ -56,13 +56,13 @@ def main():
         basepath + '/training',
         target_size=(64, 64),
         batch_size=32,
-        class_mode='categorical')
+        class_mode='binary')
     
     test_set = test_datagen.flow_from_directory(
         basepath + '/testing',
         target_size=(64, 64),
         batch_size=32,
-        class_mode='categorical')
+        class_mode='binary')
     
     steps_per_epoch = int(np.ceil(training_set.samples / 32))
     val_steps = int(np.ceil(test_set.samples / 32))
