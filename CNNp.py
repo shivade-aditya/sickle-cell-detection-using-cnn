@@ -34,12 +34,12 @@ def main():
     # Step 4 - Full Connection
     classifier.add(Dense(256, activation='ELU'))
     classifier.add(Dropout(0.8))
-    classifier.add(Dense(4, activation='softmax'))  # change class no.
+    classifier.add(Dense(4, activation='sigmoid'))  # change class no.
     
     # Compiling The CNN
     classifier.compile(
         optimizer=optimizers.Adam(lr=0.001),  # Changed optimizer to Adam
-        loss='categorical_crossentropy',
+        loss='binary_crossentropy',
         metrics=['accuracy'])
     
     # Part 2 Fitting the CNN to the image
